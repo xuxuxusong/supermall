@@ -1,9 +1,10 @@
 <template>
     <div id="list">
       <div v-for="(item, index) in listData" :key="index" class="item">
-        <span class="icon">
+        <!-- <span class="icon">
           <svg :fill="item.iconColor"><use :xlink:href="item.icon"></use></svg>
-        </span>
+        </span> -->
+        <i class="icon" :class="item.icon"></i>
         <div class="info">{{item.info}}</div>
       </div>
     </div>
@@ -36,18 +37,14 @@
     position: relative;
   }
 
-  .icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .item .icon {
-    margin-top: 10px;
+  .icon {
+    /* width: 20px;
+    height: 20px; */
+    color: #ff8198;
+    margin-top: 15px;
     position: absolute;
     left: 16px;
-    top: -7px;
   }
-
   .item .info {
     margin-left: 40px;
     border-bottom: 1px solid rgba(100, 100, 100, .1);
